@@ -1,0 +1,747 @@
+@import url("https://fonts.cdnfonts.com/css/gilroy-bold?styles=20879,20880");
+
+:root {
+  --bg-color: #111111;
+  --hover-color: #0da34e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gilroy-Medium", serif;
+  color: #fff;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+/* NAVBAR ANIMATION STARTS */
+nav {
+  width: 100%;
+  height: fit-content;
+  background-color: var(--bg-color);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+  transition: padding 0.3s;
+}
+/* this class is applied using javascript when website is scrolled */
+.scroller-nav {
+  padding: 10px 8%;
+}
+nav .nav-logo {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+nav .nav-options {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+nav .nav-options > * {
+  position: relative;
+  cursor: pointer;
+  transition: color 0.4s ease;
+}
+nav .nav-options > *::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 110%;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: right;
+  background-color: white;
+  border-radius: 10px;
+  transition: transform 0.5s ease, background-color 0.5s ease;
+}
+nav .nav-options > *:hover {
+  color: var(--hover-color);
+}
+nav .nav-options > *:hover::after {
+  transform-origin: left;
+  transform: scaleX(1);
+  background-color: var(--hover-color);
+}
+nav .button-div {
+  position: relative;
+  width: fit-content;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 0 0 16px;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  overflow: hidden;
+  border-radius: 35px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+nav .button-div::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0da34e;
+  z-index: 9;
+  border-radius: 35px;
+  transition: width 0.5s ease;
+}
+nav .button-div > * {
+  position: relative;
+  z-index: 99;
+}
+.shift-div {
+  font-size: 14px;
+  transition: all 0.35s ease;
+}
+nav .button-div:hover .shift-div {
+  color: var(--hover-color);
+  transform: translateX(-8px);
+}
+nav .button-div:hover::after {
+  width: 0;
+}
+nav .button-div .icon-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0da34e;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  overflow: hidden;
+}
+nav .button-div h1 svg {
+  width: 2.5vw;
+  height: 5vh;
+  scale: 1.75;
+}
+nav .hover-div {
+  background-color: var(--bg-color);
+  position: absolute;
+  top: 100%;
+  width: 85%;
+  height: 0;
+  border-bottom: 1px solid rgb(51, 51, 51);
+  overflow: hidden;
+  transition: all 0.3s linear;
+  padding: 0 15vw;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+nav .hover-div .more-options {
+  height: 100%;
+  display: flex;
+  gap: 3.5vw;
+  justify-content: center;
+}
+.more-options div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  text-transform: capitalize;
+}
+.more-options h1 {
+  overflow: hidden;
+}
+.more-options span {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 400;
+  color: rgb(216, 215, 215);
+  cursor: pointer;
+}
+.more-options span:hover {
+  color: rgb(149, 148, 148);
+}
+/* NAVBAR ANIMATION ENDS */
+
+/* PAGE 1 ANIMATION STARTS */
+.page1 {
+  height: 100vh;
+  width: 100%;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 3vw;
+  gap: 5vh;
+}
+.page1 h1 {
+  font-size: 9vw;
+  text-transform: uppercase;
+  font-weight: 900;
+  line-height: 9vw;
+  margin-top: -3vh;
+}
+.page1 h1 svg {
+  display: inline;
+  background-color: #0ba34e;
+  border-radius: 50%;
+  width: 7vw;
+  height: 7vw;
+  margin-top: -1.5vw;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+.page1 h1 svg:hover {
+  rotate: -20deg;
+  scale: 0.8;
+}
+.page1 .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: -2vh;
+}
+.page1 p {
+  width: 62%;
+  text-align: center;
+  font-weight: 400;
+  line-height: 1.35;
+  color: rgb(222, 221, 221);
+}
+.page1 .comments {
+  margin-top: 1.5vh;
+}
+.page1 .span-tags {
+  background-color: #0da34e1a;
+  border: 1px solid #0da34e80;
+  padding: 5px 10px;
+  font-weight: 500;
+  color: #0cc05a;
+  border-radius: 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* SLIDER ANIMATION STARTS */
+.slider {
+  width: 55%;
+  height: 15vh;
+  padding: 0 5vw;
+}
+.slide-items {
+  min-width: calc(var(--logo-width) * var(--logo-quantity));
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 0 25px;
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 20% 80%,
+    transparent
+  );
+}
+.slide-items .items {
+  position: absolute;
+  left: 100%;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  width: var(--logo-width);
+  height: var(--logo-height);
+  animation: slider 18s infinite linear;
+  animation-delay: calc((18s / var(--logo-quantity)) * (var(--position) - 1));
+}
+.slider .slide-items .items img {
+  width: 100%;
+}
+@keyframes slider {
+  from {
+    left: 100%;
+  }
+  to {
+    left: calc(var(--logo-width) * -1);
+  }
+}
+/* SLIDER END */
+
+/* PAGE 2 START */
+.page2 {
+  width: 100%;
+  height: 80vh;
+  background-color: var(--bg-color);
+  position: relative;
+  padding: 0 8%;
+  display: flex;
+}
+.page2 .left,
+.page2 .right {
+  height: 85%;
+  width: 50%;
+}
+.page2 .left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2vw 0;
+  line-height: 1.2;
+  border-top: 1px solid rgb(51, 51, 51);
+}
+.page2 .left div {
+  color: rgb(227, 227, 227);
+}
+.page2 .left div:first-child {
+  width: 40%;
+  font-size: 17px;
+  margin-top: 1vh;
+}
+.page2 .left div:last-child {
+  width: 75%;
+  font-size: 17px;
+  margin-bottom: 1vh;
+}
+.page2 .right {
+  display: flex;
+  flex-direction: column;
+}
+.page2 .right .cards {
+  width: 100%;
+  flex-grow: 1;
+  border-top: 1px solid rgb(51, 51, 51);
+}
+.page2 .cards {
+  display: flex;
+  position: relative;
+}
+.page2 .cards::before {
+  content: "";
+  display: block;
+  height: 0;
+  background-color: rgb(124, 124, 124);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: height 0.1s ease;
+}
+.page2 .cards:hover::before {
+  height: 2px;
+}
+.page2 .cards h1 {
+  max-width: 72%;
+  font-size: 22px;
+  line-height: 1.35;
+  text-transform: capitalize;
+  margin-top: 2vh;
+  color: #efefefed;
+  cursor: pointer;
+}
+.page2 .cards .action {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  margin-top: 2vh;
+}
+.page2 .cards .action p {
+  color: rgba(128, 126, 126, 0.818);
+  font-size: 15px;
+}
+.page2 .cards .action span {
+  position: relative;
+  top: 6px;
+  max-width: 12px;
+  display: inline-block;
+}
+.page2 .cards .action svg {
+  width: 12px;
+}
+.second-svg {
+  opacity: 0;
+  transform: translate(-12px);
+}
+.page2 .cards .cursor {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.412);
+  border-radius: 50%;
+  object-fit: cover;
+  transform: scale(0.25);
+  opacity: 0;
+  cursor: pointer;
+}
+/* PAGE 2 ENDS */
+
+/* PAGE 3 STARTS */
+.page3 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: grid;
+  place-content: center;
+  border-top: 1px solid #515151;
+  background-image: url("./assets/page3-bg.webp");
+  background-position: center;
+  background-size: cover;
+  background-color: var(--bg-color);
+}
+.page3 .page3-play {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.page3 .page3-play .icon {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #fffefee5;
+  font-size: 4vw;
+}
+.page3 .page3-play .icon i {
+  color: #111111;
+}
+.page3 .page3-play h5 {
+  opacity: 0;
+  padding: 5px 15px;
+  font-size: 1vw;
+  font-weight: 600;
+  color: #111111;
+  background-color: #fffefee3;
+  border-radius: 15px;
+  transform: translateY(5px);
+  transition: all 0.4s ease;
+  text-transform: uppercase;
+}
+.page3 .page3-play .icon:hover ~ h5 {
+  opacity: 1;
+  transform: translateY(0);
+}
+.page3 video {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 9999;
+  object-fit: cover;
+  border-radius: 30px;
+  opacity: 0;
+  transform: scaleX(0.4) scaleY(0);
+}
+/* PAGE 3 ENDS */
+
+/* PAGE 4 STARTS */
+.page4 {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  padding: 7% 8% 4%;
+  background-color: #ebebebed;
+}
+.page4 .section {
+  width: 100%;
+  height: 60vh;
+  display: flex;
+  gap: 5%;
+  justify-content: space-between;
+}
+.page4 .left-section {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  gap: 12%;
+  flex-direction: column;
+  border-top: 2px solid #000;
+}
+.page4 .left-section h2 {
+  font-size: 3vw;
+  color: #111111f3;
+  margin-top: 1vw;
+}
+.page4 .left-section p {
+  color: #171717;
+  font-size: 1.4vw;
+  white-space: nowrap;
+}
+.page4 .right-section {
+  width: 70%;
+  height: 90%;
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+}
+.page4 .right-section img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.page4 .right-section video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.page4 .right-section .page4-cursor {
+  height: 115px;
+  width: 115px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+  border-radius: 50%;
+  background: rgb(75, 75, 255);
+  transform: scaleX(0.25) scaleY(0.1);
+}
+.page4 .right-section .page4-cursor .icon {
+  padding-right: 15px;
+  display: flex;
+  justify-content: end;
+}
+.page4 .right-section .page4-cursor p {
+  padding-left: 15px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+/* PAGE 4 ENDS */
+
+/* PAGE 5 STARTS */
+.page5 {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 6vw;
+  align-items: center;
+  padding: 7% 8% 5%;
+  background-color: var(--bg-color);
+}
+.page5 .top-banner h1 {
+  font-size: 3.5vw;
+  font-weight: 600;
+  line-height: 1.15;
+  text-transform: capitalize;
+}
+.page5 .services {
+  width: 100%;
+  min-height: 100vh;
+  padding: 4vw 0;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #515151;
+}
+.page5 .service-left {
+  width: 25%;
+  max-height: fit-content;
+}
+.page5 .action {
+  height: 4vw;
+  position: sticky;
+  top: 12vh;
+  gap: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.25vw;
+  font-weight: 500;
+  text-transform: uppercase;
+  border-radius: 50px;
+  background-color: #0da34e;
+  cursor: pointer;
+}
+
+/* Button animation */
+
+.page5 .action h1 {
+  color: white;
+  font-size: 1.25vw;
+  display: flex;
+}
+.page5 .action h1 .span-space {
+  margin: 0 0.4vw;
+}
+.page5 .action > span {
+  position: relative;
+  top: 6px;
+  max-width: 12px;
+  display: inline-block;
+}
+.page5 .action .hover-spans {
+  display: flex;
+  position: absolute;
+}
+.page5 .action .hover-spans span {
+  opacity: 0;
+  transform: translateY(1vw) rotateX(-90deg);
+}
+
+/* Button animation ends */
+
+.action svg {
+  width: 1vw;
+}
+.page5 .service-right {
+  width: 75%;
+  min-height: 100vh;
+  padding-left: 5%;
+}
+.page5 .service-right .service-article {
+  width: 100%;
+  min-height: 45vh;
+  font-size: 2.1vw;
+  line-height: 2.6vw;
+}
+.page5 .service-right .float-left {
+  width: 25%;
+  height: 2.5vw;
+  font-size: 1.2vw;
+  position: relative;
+  right: 1.3vw;
+  scale: 0.85;
+}
+.page5 .service-content {
+  width: 100%;
+}
+.service-content details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75vw;
+  border-top: 2px solid #515151;
+  transition: all .3s ease;
+}
+.service-content details[open] {
+  border-top: 2px solid #ddd;
+}
+.service-content summary {
+  cursor: pointer;
+}
+.service-content summary::marker {
+  content: "";
+}
+.service-content details[open] summary i {
+  transform: rotate(180deg);
+}
+.page5 .service-title {
+  font-size: 4vw;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.page5 .service-title i {
+  font-size: 2vw;
+  transition: transform .3s ease;
+}
+.page5 .service-content .service-tags {
+  display: flex;
+  gap: 0.15vw;
+}
+.service-tags .tags {
+  margin: 2vh 0 3vh;
+  padding: 0.3% 1.2%;
+  font-size: 0.95vw;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: 1px solid #515151;
+  border-radius: 1.25vw;
+  cursor: pointer;
+}
+.page5 .service-content .points-list {
+  width: 100%;
+  margin-top: 3vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.service-content .points {
+  width: 100%;
+  height: 10vw;
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  align-items: flex-start;
+  justify-content: space-between;
+  border-top: 1px solid #3d3d3d;
+  transition: border 0.2s ease;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 0.4s;
+    background-color: #282828;
+  }
+  &:hover::after {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+  &:hover {
+    border-top: 1px solid white;
+  }
+  &:hover h1 {
+    transform: translateX(10px);
+  }
+  &:hover i {
+    transform: translateX(-10px);
+  }
+}
+.service-content .points > * {
+  position: relative;
+  z-index: 2;
+  margin-top: 3vh;
+}
+.service-content .points h1 {
+  width: 20%;
+  font-size: 2vw;
+  white-space: nowrap;
+  transition: transform 0.4s ease;
+}
+.service-content .points p {
+  width: 55%;
+  font-size: 1vw;
+  letter-spacing: 0ch;
+}
+.service-content .points i {
+  transition: transform 0.4s ease;
+}
