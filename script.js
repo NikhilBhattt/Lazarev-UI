@@ -1,3 +1,14 @@
+function lenisAnimation() { 
+  const lenis = new Lenis()
+
+  function raf(time) {
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+  }
+
+  requestAnimationFrame(raf)
+}
+
 function navbarAnimation() {
   let navlinks = document.querySelector("nav .nav-options");
   let nav = document.querySelector("nav");
@@ -260,6 +271,7 @@ function page5Animation() {
   });
 }
 
+lenisAnimation();
 navbarAnimation();
 page1Animation();
 page2Animation();
